@@ -10,8 +10,5 @@
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.4",
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2",
     "foundation": "zurb/bower-foundation#~5.4.0"
-  },
-  "resolutions": {
-    "jquery": "~2.1.1"
   }
 }
