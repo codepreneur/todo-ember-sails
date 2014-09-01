@@ -1,0 +1,30 @@
+{
+  "apps" : [{
+    "name"      : "SANE App",
+    "script"    : "./server/app.js",
+    "env": {
+      "COMMON_VARIABLE": "true"
+    },
+    "env_production" : {
+      "NODE_ENV": "production"
+    }
+  }],
+  "deploy" : {
+    "production" : {
+      "user" : "",
+      "host" : "",
+      "ref"  : "origin/master",
+      "repo" : "git@github.com:artificialio/sane.git",
+      "path" : "/root/apps/sane/production/",
+      "post-deploy" : "cd server; and npm install; and pm2 startOrRestart ecosystem.json -x --env production"
+    },
+    "development" : {
+      "user" : "",
+      "host" : "",
+      "ref"  : "origin/master",
+      "repo" : "git@github.com:artificialio/sane.git",
+      "path" : "/root/apps/sane/development/",
+      "post-deploy" : "cd server; and npm install; and pm2 startOrRestart ecosystem.json -x --env development"
+    }
+  }
+}
